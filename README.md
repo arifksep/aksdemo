@@ -47,6 +47,7 @@ docker login akscvmacr.azurecr.io -u akscvmacr -p <token>
 ```
 
 #Tag local image
+
 ```
 docker tag webappservice:v0 akscvmacr.azurecr.io/webappservice:v0
 ```
