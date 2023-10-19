@@ -38,8 +38,9 @@ az aks nodepool add `
 docker build -t tempdockerwebapi:v0 .
 
 #Login to ACR
-
+```
 docker login akscvmacr.azurecr.io -u akscvmacr -p <token>
+```
 
 #Tag local image
 
