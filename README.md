@@ -1,6 +1,7 @@
 # aksdemo
 
 #create aks cluster
+
 az aks create `
     --resource-group rg-aks-handson1 `
     --name akshandson `
@@ -13,6 +14,7 @@ az aks create `
     --network-plugin azure
 
 #add linux node pool to the cluster
+
 az aks nodepool add `
     --resource-group rg-aks-handson1 `
     --cluster-name akshandson `
@@ -22,6 +24,7 @@ az aks nodepool add `
     --os-sku Mariner
 
 #add windows node pool to the AKS
+
 az aks nodepool add `
     --resource-group rg-aks-handson1 `
     --cluster-name akshandson `
@@ -31,4 +34,5 @@ az aks nodepool add `
     --node-count 1 
 
 #Build docker Image
+
 docker build -t tempdockerwebapi:v0 .
