@@ -1,6 +1,6 @@
 # aksdemo
 
-#create aks cluster
+##create aks cluster
 
 az aks create `
     --resource-group rg-aks-handson1 `
