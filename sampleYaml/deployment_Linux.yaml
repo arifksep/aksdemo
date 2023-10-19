@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lnxappdeployment
+spec:
+  selector:
+    matchLabels:
+      app: lnxapppod  # Label to match with the pod template
+  template:
+    metadata:
+      labels:
+        app: lnxapppod  # Label for the pod template
+    spec:
+      nodeSelector:
+        kubernetes.io/os: linux        
+      containers:
+      - name: lnxappcontainer
+        image: akscvmacr.azurecr.io/webappservice:v0  # Replace with your container image URL
+        ports:
+        - containerPort: 80  # Port on which your web API is listening
+---           
+apiVersion: v1
+kind: Service
+metadata:
+  name: lnxappservice
+spec:
+  type: LoadBalancer
+  ports: 
+  - name: second
+    port: 80
+    targetPort: 80
+  selector:
+    app: lnxapppod
