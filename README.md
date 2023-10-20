@@ -69,23 +69,23 @@ az aks get-credentials --resource-group rg-aks-handson1 --name akshandson --over
 
 #deploy ACR image to pods
 ```
-kubectl apply -f deployment_Linux.yaml
+kubectl apply -f <your yaml deployment file>.yaml
 ```
 
 #check status of deployment
 ```
 kubectl get deployments
-kubectl describe deployments lnxappdeployment
+kubectl describe deployments <deployment name>
 ```
 
 #check status of pods
 ```
 kubectl get pods
-kubectl describe pods mkmslicdeployment-7fdf847bd7-zxz6g
+kubectl describe pods <pod name>
 ```
 
 #check status of service
 ```
 kubectl get services
-kubectl describe service lnxappservice
+kubectl describe service <service name>
 ```
