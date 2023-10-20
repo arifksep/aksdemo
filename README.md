@@ -43,23 +43,23 @@ docker build -t tempdockerwebapi:v0 .
 
 #Login to ACR
 ```
-docker login akscvmacr.azurecr.io -u akscvmacr -p <token>
+docker login <yourACR>.azurecr.io -u <user> -p <token>
 ```
 
 #Tag local image
 
 ```
-docker tag webappservice:v0 akscvmacr.azurecr.io/webappservice:v0
+docker tag webappservice:v0 <yourACR>.azurecr.io/webappservice:v0
 ```
 
 #Push image to ACR
 ```
-docker push akscvmacr.azurecr.io/webappservice:v0
+docker push <yourACR>.azurecr.io/webappservice:v0
 ```
 
 #Link AKS with ACR
 ```
-az aks update --resource-group rg-aks-handson1 --name akshandson --attach-acr akscvmacr
+az aks update --resource-group rg-aks-handson1 --name akshandson --attach-acr <yourACR>
 ```
 
 #Fetch AKS credentials
